@@ -96,8 +96,11 @@ function renderIngredScript() {
     addToGroceryBtns.forEach(function (addToGroceryBtn) {
         addToGroceryBtn.addEventListener('click', function (e) {
             ingredientArray = [];
+            //ul: button -> p -> ul
             const thisIngredients =
+            //previousElementSibling is the same as sibiling in jQuery
                 e.target.previousElementSibling.previousElementSibling;
+            //selecting everything within the ul that have the ingredient-item class the (lis)
             const ingredientListItems =
                 thisIngredients.querySelectorAll('.ingredient-item');
             -(

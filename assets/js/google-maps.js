@@ -6,7 +6,8 @@ function googleScript() {
         let city = document.querySelector(".google-maps-search-input").value.trim();
         // console.log(city);
         let longLatApi = "d79a19024c414b38ac179719bfbf4d90";
-        const geoappifyUrl = "https://api.geoapify.com/v1/geocode/search?text=" + city + "&filter=countrycode:us&apiKey=" + longLatApi;
+        //replaced " " with back tick ` to use ${city} - template literal syntax
+        const geoappifyUrl = `https://api.geoapify.com/v1/geocode/search?text=${city}&filter=countrycode:us&apiKey=${longLatApi}`
         //this is the fetch itself
         fetch(geoappifyUrl)
             .then(function (response) {

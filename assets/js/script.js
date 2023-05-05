@@ -28,6 +28,7 @@ ingredientInput.addEventListener("keyup", function (event) {
     event.preventDefault();
     // If the user pressed enter, we call the getRecipes function
     if (event.keyCode === 13) {
+        //calling the click property on the get recipes button
         getRecipesBtn.click();
     }
 });
@@ -89,6 +90,8 @@ var displayRecipes = function (data) {
         });
 
         // This is our HTML template for each recipe
+        //adding something to the value - when it's a back tick ` you can put code in it - called a template literal
+        //jQuery uses $() but vanilla is ${} only in a template literal
         recipeHTML += `
             <div class="card mb-5">
                 <div class="card-image">
@@ -133,6 +136,12 @@ var displayRecipes = function (data) {
                 </div>
             </div>
         `;
+        //ingredient list is the ul created and the li's were created earlier, separated by a " " instead of a comma
+        //in the template literal, the lis were first created into an array (array.from)
+        //map means transform/changing it ^^
+        //changed/transformed the li (that's what he wanted to call each item) into the new element <li class='ingredient-item'>${li.textContent}</li>
+        //then join with one space
+
         // We now append our html for the current weather data to its DOM wrapper
         recipeContainer.innerHTML = recipeHTML;
         // We can call the call the setupModals function now that the recipes are on the page,
